@@ -12,6 +12,11 @@
     <string name="examDate">Exam date</string>
     <string name="examTime">Exam time</string>
     <string name="examLoc">Exam location</string>
+    <string name="examNameHint">Enter exam name</string>
+    <string name="examDateHint">Enter exam date</string>
+    <string name="examTimeHint">Enter exam time</string>
+    <string name="examLocHint">Enter exam location</string>
+    <string name="add_exam">Add Exam</string>
 
     <!-- Home Page Strings -->
     <string name="classes">Classes</string>

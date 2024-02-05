@@ -34,11 +34,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         Button examsBtn = findViewById(R.id.examsBtn);
+        Button classesBtn = findViewById(R.id.classesBtn);
 
         examsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                changeActivity();
+                openExamsActivity();
+            }
+        });
+
+        classesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openClassesActivity();
             }
         });
 
@@ -60,10 +68,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    private void changeActivity(){
+
+    private void openExamsActivity(){
         Intent intent = new Intent(this, examsActivity.class);
         startActivity(intent);
     }
+
+    private void openClassesActivity(){
+        Intent intent = new Intent(this, classesActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

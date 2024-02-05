@@ -8,6 +8,77 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/examsRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="399dp"
+        android:layout_height="452dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.188"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.066" />
+
+    <Button
+        android:id="@+id/updateExamsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add_exam"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
+        app:layout_constraintVertical_bias="0.497" />
+
+    <EditText
+        android:id="@+id/examLocEt"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:hint="@string/examLocHint"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/updateExamsBtn"
+        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
+        app:layout_constraintVertical_bias="0.907" />
+
+    <EditText
+        android:id="@+id/examDateEt"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:hint="@string/examDateHint"
+        android:inputType="datetime|date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/updateExamsBtn"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
+        app:layout_constraintVertical_bias="0.638" />
+
+    <EditText
+        android:id="@+id/examNameEt"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:hint="@string/examNameHint"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/updateExamsBtn"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
+        app:layout_constraintVertical_bias="0.084" />
+
+    <EditText
+        android:id="@+id/examTimeEt"
+        android:layout_width="248dp"
+        android:layout_height="48dp"
+        android:hint="@string/examTimeHint"
+        android:inputType="datetime|time"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/updateExamsBtn"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
+        app:layout_constraintVertical_bias="0.356" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
