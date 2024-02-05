@@ -7,6 +7,12 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <!-- Exam Strings -->
+    <string name="examName">Exam name</string>
+    <string name="examDate">Exam date</string>
+    <string name="examTime">Exam time</string>
+    <string name="examLoc">Exam location</string>
+
     <!-- Home Page Strings -->
     <string name="classes">Classes</string>
     <string name="assignments">Assignments</string>
@@ -19,4 +25,6 @@
     <string name="class_name">Enter Class Name</string>
     <string name="class_prof">Enter Instructor Name</string>
     <string name="class_time">Enter Class Time</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
