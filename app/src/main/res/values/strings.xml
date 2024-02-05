@@ -5,7 +5,15 @@
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="back">Back</string>
+    <string name="update">Update</string>
+
+    <!-- Home Page Strings -->
+    <string name="classes">Classes</string>
+    <string name="assignments">Assignments</string>
+    <string name="exams">Exams</string>
+    <string name="todo">To-Do List</string>
+    <string name="scheduler">Scheduler App</string>
 
     <!-- Exam Strings -->
     <string name="examName">Exam name</string>
@@ -17,13 +25,7 @@
     <string name="examTimeHint">Enter exam time</string>
     <string name="examLocHint">Enter exam location</string>
     <string name="add_exam">Add Exam</string>
-
-    <!-- Home Page Strings -->
-    <string name="classes">Classes</string>
-    <string name="assignments">Assignments</string>
-    <string name="exams">Exams</string>
-    <string name="todo">To-Do List</string>
-    <string name="scheduler">Scheduler App</string>
+    <string name="edit_exam">Edit Exam</string>
 
     <!-- Class Strings -->
     <string name="add_class">Add Class</string>

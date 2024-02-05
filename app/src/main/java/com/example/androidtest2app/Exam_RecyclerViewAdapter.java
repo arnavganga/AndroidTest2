@@ -1,4 +1,4 @@
-package com.example.androidtest2app.placeholder;
+package com.example.androidtest2app;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,18 +9,18 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.androidtest2app.R;
-import com.example.androidtest2app.examsModel;
-
 import java.util.ArrayList;
 
 public class Exam_RecyclerViewAdapter extends RecyclerView.Adapter<Exam_RecyclerViewAdapter.MyViewHolder> {
+    private final RecyclerViewInterface recyclerViewInterface;
     Context context;
     ArrayList<examsModel> examsModels;
 
-    public Exam_RecyclerViewAdapter(Context context, ArrayList<examsModel> examsModels) {
+    public Exam_RecyclerViewAdapter(Context context, ArrayList<examsModel> examsModels,
+                                    RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
         this.examsModels = examsModels;
+        this.recyclerViewInterface = recyclerViewInterface;
     }
     @NonNull
     @Override
@@ -29,7 +29,7 @@ public class Exam_RecyclerViewAdapter extends RecyclerView.Adapter<Exam_Recycler
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.recycler_view_row, parent, false);
 
-        return new Exam_RecyclerViewAdapter.MyViewHolder(view);
+        return new Exam_RecyclerViewAdapter.MyViewHolder(view, recyclerViewInterface);
     }
 
     @Override
@@ -53,13 +53,41 @@ public class Exam_RecyclerViewAdapter extends RecyclerView.Adapter<Exam_Recycler
 
         TextView tvExamName, tvExamDate, tvExamTime, tvExamLoc;
 
-        public MyViewHolder(@NonNull View itemView) {
+        public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
 
             tvExamName = itemView.findViewById(R.id.examName);
             tvExamDate = itemView.findViewById(R.id.examDate);
             tvExamTime = itemView.findViewById(R.id.examTime);
             tvExamLoc = itemView.findViewById(R.id.examLoc);
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    if (recyclerViewInterface != null) {
+                        int pos = getBindingAdapterPosition();
+
+                        if (pos != RecyclerView.NO_POSITION) {
+                            recyclerViewInterface.onItemLongClick(pos);
+                        }
+                    }
+
+                    return true;
+                }
+            });
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (recyclerViewInterface != null) {
+                        int pos = getBindingAdapterPosition();
+
+                        if (pos != RecyclerView.NO_POSITION) {
+                            recyclerViewInterface.onItemClick(pos);
+                        }
+                    }
+                }
+            });
         }
     }
 }

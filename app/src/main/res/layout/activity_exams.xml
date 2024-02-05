@@ -19,15 +19,27 @@
 
     <Button
         android:id="@+id/updateExamsBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
         android:text="@string/add_exam"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.946"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
-        app:layout_constraintVertical_bias="0.497" />
+        app:layout_constraintVertical_bias="0.638" />
+
+    <Button
+        android:id="@+id/examsToHomeBtn"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
+        app:layout_constraintVertical_bias="0.312" />
 
     <EditText
         android:id="@+id/examLocEt"
