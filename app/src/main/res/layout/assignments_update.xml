@@ -12,7 +12,7 @@
 
 
     <TextView
-        android:id="@+id/editAssignmentTitle"
+        android:id="@+id/editAssignment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="21dp"
@@ -25,43 +25,32 @@
     </TextView>
 
     <EditText
-        android:id="@+id/editAssignmentName"
+        android:id="@+id/editAssignmentTitle"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#fff"
-        android:hint="@string/assignmentNameHint"
+        android:hint="@string/assignmentTitleHint"
         android:inputType="text"
         android:padding="11dp">
     </EditText>
 
     <EditText
-        android:id="@+id/editAssignmentDate"
+        android:id="@+id/editAssignmentDueDate"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#fff"
-        android:hint="@string/assignmentDateHint"
-        android:inputType="datetime|date"
-        android:padding="11dp">
-
-    </EditText>
-
-    <EditText
-        android:id="@+id/editAssignmentTime"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:background="#fff"
-        android:hint="@string/assignmentTimeHint"
+        android:hint="@string/assignmentDueDateHint"
         android:inputType="datetime|time"
         android:padding="11dp">
 
     </EditText>
 
     <EditText
-        android:id="@+id/editAssignmentLoc"
+        android:id="@+id/editAssignmentClass"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#fff"
-        android:hint="@string/assignmentLocHint"
+        android:hint="@string/assignmentClassHint"
         android:inputType="text"
         android:padding="11dp">
 

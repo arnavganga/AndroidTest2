@@ -39,12 +39,12 @@
     
     <!-- Assignment Strings -->
     <string name="add_assignment">Add Assignment</string>
-    <string name="assignmentNameHint">Enter Assignment Name</string>
-    <string name="assignmentProfHint">Enter Instructor Name</string>
-    <string name="assignmentTimeHint">Enter Assignment Time</string>
-    <string name="assignmentName">Assignment name</string>
-    <string name="assignmentTime">Assignment time</string>
-    <string name="assignmentProf">Assignment Instructor</string>
+    <string name="assignmentTitleHint">Enter Assignment Title</string>
+    <string name="assignmentClassHint">Enter Class Title</string>
+    <string name="assignmentDueDateHint">Enter Assignment Due Date</string>
+    <string name="assignmentTitle">Assignment Title</string>
+    <string name="assignmentDueDate">Assignment Due Date</string>
+    <string name="assignmentClass">Class Title</string>
     <string name="edit_assignment">Edit Assignment</string>
     
 </resources>

@@ -26,42 +26,26 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/classProf"
+                android:id="@+id/assignmentClass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:text="@string/assignmentLoc"
+                android:text="@string/assignmentClass"
                 android:textColor="#B8A4C8"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.093"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/classTime"
-                app:layout_constraintVertical_bias="0.3" />
+                app:layout_constraintTop_toBottomOf="@+id/assignmentDueDate" />
 
             <TextView
-                android:id="@+id/classTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat"
-                android:text="@string/assignmentTime"
-                android:textColor="#B8A4C8"
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.087"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/assignmentDate"
-                app:layout_constraintVertical_bias="0.126" />
-
-            <TextView
-                android:id="@+id/className"
+                android:id="@+id/assignmentTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/assignmentName"
+                android:text="@string/assignmentTitle"
                 android:textColor="#F6C993"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -70,18 +54,18 @@
                 app:layout_constraintVertical_bias="0.125" />
 
             <TextView
-                android:id="@+id/assignmentDate"
+                android:id="@+id/assignmentDueDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:text="@string/assignmentDate"
+                android:text="@string/assignmentDueDate"
                 android:textColor="#B8A4C8"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.086"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/className"
+                app:layout_constraintTop_toBottomOf="@+id/assignmentTitle"
                 app:layout_constraintVertical_bias="0.126" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

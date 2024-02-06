@@ -37,9 +37,9 @@ public class Assignment_RecyclerViewAdapter extends RecyclerView.Adapter<Assignm
     public void onBindViewHolder(@NonNull Assignment_RecyclerViewAdapter.MyViewHolder holder, int position) {
         //Assigning values to recycler view
 
-        holder.tvAssignmentName.setText(assignmentModels.get(position).getAssignmentName());
-        holder.tvAssignmentTime.setText(assignmentModels.get(position).getAssignmentTime());
-        holder.tvAssignmentProf.setText(assignmentModels.get(position).getAssignmentProf());
+        holder.tvAssignmentTitle.setText(assignmentModels.get(position).getAssignmentTitle());
+        holder.tvAssignmentDueDate.setText(assignmentModels.get(position).getAssignmentDueDate());
+        holder.tvAssignmentClass.setText(assignmentModels.get(position).getAssignmentClass());
 
     }
 
@@ -48,17 +48,17 @@ public class Assignment_RecyclerViewAdapter extends RecyclerView.Adapter<Assignm
         return assignmentModels.size();
     }
 
-    public static assignment MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         //Grab views from recycler_view_row
 
-        TextView tvAssignmentName, tvAssignmentTime, tvAssignmentProf;
+        TextView tvAssignmentTitle, tvAssignmentDueDate, tvAssignmentClass;
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
 
-            tvAssignmentName = itemView.findViewById(R.id.assignmentName);
-            tvAssignmentTime = itemView.findViewById(R.id.assignmentTime);
-            tvAssignmentProf = itemView.findViewById(R.id.assignmentProf);
+            tvAssignmentTitle = itemView.findViewById(R.id.assignmentTitle);
+            tvAssignmentDueDate = itemView.findViewById(R.id.assignmentDueDate);
+            tvAssignmentClass = itemView.findViewById(R.id.assignmentClass);
 
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override

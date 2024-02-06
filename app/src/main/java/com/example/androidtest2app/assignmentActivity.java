@@ -17,7 +17,7 @@ public class assignmentActivity extends AppCompatActivity implements RecyclerVie
 
     ArrayList<assignmentModel> assignmentModels = new ArrayList<>();
     Assignment_RecyclerViewAdapter adapter;
-    EditText assignmentNameEt, assignmentTimeEt, assignmentProfEt;
+    EditText assignmentTitleEt, assignmentDueDateEt, assignmentClassEt;
     Button addAssignment, returnMain;
 
     @Override
@@ -25,9 +25,9 @@ public class assignmentActivity extends AppCompatActivity implements RecyclerVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.assignment_activity);
 
-        assignmentNameEt = findViewById(R.id.assignmentNameEt);
-        assignmentTimeEt = findViewById(R.id.assignmentTimeEt);
-        assignmentProfEt = findViewById(R.id.assignmentProfEt);
+        assignmentTitleEt = findViewById(R.id.assignmentTitleEt);
+        assignmentDueDateEt = findViewById(R.id.assignmentDueDateEt);
+        assignmentClassEt = findViewById(R.id.assignmentClassEt);
         addAssignment = findViewById(R.id.updateAssignmentsBtn);
         returnMain = findViewById(R.id.assignmentsToHomeBtn);
 
@@ -45,11 +45,11 @@ public class assignmentActivity extends AppCompatActivity implements RecyclerVie
         addAssignment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String assignmentName = assignmentNameEt.getText().toString();
-                String assignmentTime = assignmentTimeEt.getText().toString();
-                String assignmentProf = assignmentProfEt.getText().toString();
+                String assignmentTitle = assignmentTitleEt.getText().toString();
+                String assignmentDueDate = assignmentDueDateEt.getText().toString();
+                String assignmentClass = assignmentClassEt.getText().toString();
 
-                assignmentModels.add(new assignmentModel(assignmentName, assignmentTime, assignmentProf));
+                assignmentModels.add(new assignmentModel(assignmentTitle, assignmentDueDate, assignmentClass));
                 adapter.notifyItemInserted(assignmentModels.size() - 1);
                 updateAssignmentModels(recyclerView);
             }
@@ -62,7 +62,7 @@ public class assignmentActivity extends AppCompatActivity implements RecyclerVie
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
     private void openMainActivity(){
-        Intent intent = new Intent(this, MainActivity.assignment);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
     @Override
@@ -76,22 +76,22 @@ public class assignmentActivity extends AppCompatActivity implements RecyclerVie
 
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.assignments_update);
-        EditText newAssignmentName = dialog.findViewById(R.id.editAssignmentName);
-        EditText newAssignmentTime = dialog.findViewById(R.id.editAssignmentTime);
-        EditText newAssignmentProf = dialog.findViewById(R.id.editAssignmentProf);
+        EditText newAssignmentTitle = dialog.findViewById(R.id.editAssignmentTitle);
+        EditText newAssignmentDueDate = dialog.findViewById(R.id.editAssignmentDueDate);
+        EditText newAssignmentClass = dialog.findViewById(R.id.editAssignmentClass);
 
         Button updateAssignment = dialog.findViewById(R.id.updateAssignmentBtn);
 
-        newAssignmentName.setText((assignmentModels.get(position)).getAssignmentName());
-        newAssignmentTime.setText((assignmentModels.get(position)).getAssignmentTime());
-        newAssignmentProf.setText((assignmentModels.get(position)).getAssignmentProf());
+        newAssignmentTitle.setText((assignmentModels.get(position)).getAssignmentTitle());
+        newAssignmentDueDate.setText((assignmentModels.get(position)).getAssignmentDueDate());
+        newAssignmentClass.setText((assignmentModels.get(position)).getAssignmentClass());
 
         updateAssignment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                assignmentModels.set(position, new assignmentModel(newAssignmentName.getText().toString(),
-                        newAssignmentTime.getText().toString(),
-                        newAssignmentProf.getText().toString()));
+                assignmentModels.set(position, new assignmentModel(newAssignmentTitle.getText().toString(),
+                        newAssignmentDueDate.getText().toString(),
+                        newAssignmentClass.getText().toString()));
                 adapter.notifyItemChanged(position);
                 dialog.dismiss();
             }

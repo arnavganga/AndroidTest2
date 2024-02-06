@@ -33,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
 
         Button examsBtn = findViewById(R.id.examsBtn);
         Button classesBtn = findViewById(R.id.classesBtn);
+        Button assignmentsBtn = findViewById(R.id.assignmentsBtn);
+
+        assignmentsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openAssignmentsActivity();
+            }
+        });
 
         examsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
 
     private void openExamsActivity(){
         Intent intent = new Intent(this, examActivity.class);
+        startActivity(intent);
+    }
+    private void openAssignmentsActivity(){
+        Intent intent = new Intent(this, assignmentActivity.class);
         startActivity(intent);
     }
 
