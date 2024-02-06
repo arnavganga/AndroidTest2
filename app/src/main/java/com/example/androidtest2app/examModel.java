@@ -1,13 +1,13 @@
 package com.example.androidtest2app;
 
-public class examsModel {
+public class examModel {
     String examName;
     String examTime;
     String examLoc;
     String examDate;
 
 
-    public examsModel(String examName, String examDate, String examTime, String examLoc) {
+    public examModel(String examName, String examDate, String examTime, String examLoc) {
         this.examName = examName;
         this.examTime = examTime;
         this.examLoc = examLoc;

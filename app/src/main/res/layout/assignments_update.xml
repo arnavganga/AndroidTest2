@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="350dp"
+    android:layout_height="wrap_content"
+    android:paddingLeft="21dp"
+    android:paddingRight="21dp"
+    android:paddingBottom="11dp"
+    android:orientation="vertical"
+    android:background="@drawable/rounded_corner"
+    >
+
+
+    <TextView
+        android:id="@+id/editAssignmentTitle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="21dp"
+        android:gravity="center"
+        android:text="@string/edit_assignment"
+        android:textColor="#fff"
+        android:textSize="32sp"
+        android:textStyle="bold">
+
+    </TextView>
+
+    <EditText
+        android:id="@+id/editAssignmentName"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#fff"
+        android:hint="@string/assignmentNameHint"
+        android:inputType="text"
+        android:padding="11dp">
+    </EditText>
+
+    <EditText
+        android:id="@+id/editAssignmentDate"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#fff"
+        android:hint="@string/assignmentDateHint"
+        android:inputType="datetime|date"
+        android:padding="11dp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/editAssignmentTime"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#fff"
+        android:hint="@string/assignmentTimeHint"
+        android:inputType="datetime|time"
+        android:padding="11dp">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/editAssignmentLoc"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#fff"
+        android:hint="@string/assignmentLocHint"
+        android:inputType="text"
+        android:padding="11dp">
+
+    </EditText>
+
+    <Button
+        android:id="@+id/updateAssignmentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="11dp"
+        android:backgroundTint="#fff"
+        android:text="@string/update"
+        android:textColor="@color/design_default_color_secondary">
+    </Button>
+
+</LinearLayout>

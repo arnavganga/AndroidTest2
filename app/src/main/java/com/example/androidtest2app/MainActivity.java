@@ -1,6 +1,5 @@
 package com.example.androidtest2app;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -10,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
 
-import androidx.core.view.WindowCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -70,12 +68,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void openExamsActivity(){
-        Intent intent = new Intent(this, examsActivity.class);
+        Intent intent = new Intent(this, examActivity.class);
         startActivity(intent);
     }
 
     private void openClassesActivity(){
-        Intent intent = new Intent(this, classesActivity.class);
+        Intent intent = new Intent(this, classActivity.class);
         startActivity(intent);
     }
 

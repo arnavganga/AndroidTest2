@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="409dp"
+        android:layout_width="380dp"
         android:layout_height="175dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -15,53 +15,53 @@
         android:layout_marginBottom="10dp"
         app:cardBackgroundColor="@color/darkBlue"
         app:cardCornerRadius="20dp"
-        app:cardElevation="8dp"
+        app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="413dp"
-            android:layout_height="175dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/examLoc"
+                android:id="@+id/classProf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:text="@string/examLoc"
+                android:text="@string/assignmentLoc"
                 android:textColor="#B8A4C8"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.093"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/examTime"
+                app:layout_constraintTop_toBottomOf="@+id/classTime"
                 app:layout_constraintVertical_bias="0.3" />
 
             <TextView
-                android:id="@+id/examTime"
+                android:id="@+id/classTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:text="@string/examTime"
+                android:text="@string/assignmentTime"
                 android:textColor="#B8A4C8"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.087"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/examDate"
+                app:layout_constraintTop_toBottomOf="@+id/assignmentDate"
                 app:layout_constraintVertical_bias="0.126" />
 
             <TextView
-                android:id="@+id/examName"
+                android:id="@+id/className"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/montserrat_bold"
-                android:text="@string/examName"
+                android:text="@string/assignmentName"
                 android:textColor="#F6C993"
                 android:textSize="30sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -70,18 +70,18 @@
                 app:layout_constraintVertical_bias="0.125" />
 
             <TextView
-                android:id="@+id/examDate"
+                android:id="@+id/assignmentDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat"
-                android:text="@string/examDate"
+                android:text="@string/assignmentDate"
                 android:textColor="#B8A4C8"
                 android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.086"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/examName"
+                app:layout_constraintTop_toBottomOf="@+id/className"
                 app:layout_constraintVertical_bias="0.126" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 

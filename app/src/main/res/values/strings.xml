@@ -29,9 +29,22 @@
 
     <!-- Class Strings -->
     <string name="add_class">Add Class</string>
-    <string name="class_name">Enter Class Name</string>
-    <string name="class_prof">Enter Instructor Name</string>
-    <string name="class_time">Enter Class Time</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="classNameHint">Enter Class Name</string>
+    <string name="classProfHint">Enter Instructor Name</string>
+    <string name="classTimeHint">Enter Class Time</string>
+    <string name="className">Class name</string>
+    <string name="classTime">Class time</string>
+    <string name="classProf">Class Instructor</string>
+    <string name="edit_class">Edit Class</string>
+    
+    <!-- Assignment Strings -->
+    <string name="add_assignment">Add Assignment</string>
+    <string name="assignmentNameHint">Enter Assignment Name</string>
+    <string name="assignmentProfHint">Enter Instructor Name</string>
+    <string name="assignmentTimeHint">Enter Assignment Time</string>
+    <string name="assignmentName">Assignment name</string>
+    <string name="assignmentTime">Assignment time</string>
+    <string name="assignmentProf">Assignment Instructor</string>
+    <string name="edit_assignment">Edit Assignment</string>
+    
 </resources>

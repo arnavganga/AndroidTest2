@@ -11,55 +11,54 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Exam_RecyclerViewAdapter extends RecyclerView.Adapter<Exam_RecyclerViewAdapter.MyViewHolder> {
+public class Class_RecyclerViewAdapter extends RecyclerView.Adapter<Class_RecyclerViewAdapter.MyViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
     Context context;
-    ArrayList<examModel> examModels;
+    ArrayList<classModel> classModels;
 
-    public Exam_RecyclerViewAdapter(Context context, ArrayList<examModel> examModels,
+    public Class_RecyclerViewAdapter(Context context, ArrayList<classModel> classModels,
                                     RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
-        this.examModels = examModels;
+        this.classModels = classModels;
         this.recyclerViewInterface = recyclerViewInterface;
     }
     @NonNull
     @Override
-    public Exam_RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Class_RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Inflate layout
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.exam_recycler_view_row, parent, false);
+        View view = inflater.inflate(R.layout.class_recycler_view_row, parent, false);
 
-        return new Exam_RecyclerViewAdapter.MyViewHolder(view, recyclerViewInterface);
+        return new Class_RecyclerViewAdapter.MyViewHolder(view, recyclerViewInterface);
     }
+    
 
     @Override
-    public void onBindViewHolder(@NonNull Exam_RecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull Class_RecyclerViewAdapter.MyViewHolder holder, int position) {
         //Assigning values to recycler view
 
-        holder.tvExamName.setText(examModels.get(position).getExamName());
-        holder.tvExamDate.setText(examModels.get(position).getExamDate());
-        holder.tvExamTime.setText(examModels.get(position).getExamTime());
-        holder.tvExamLoc.setText(examModels.get(position).getExamLoc());
+        holder.tvClassName.setText(classModels.get(position).getClassName());
+        holder.tvClassTime.setText(classModels.get(position).getClassTime());
+        holder.tvClassProf.setText(classModels.get(position).getClassProf());
 
     }
 
     @Override
     public int getItemCount() {
-        return examModels.size();
+        return classModels.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         //Grab views from recycler_view_row
 
-        TextView tvExamName, tvExamDate, tvExamTime, tvExamLoc;
+        TextView tvClassName, tvClassTime, tvClassProf;
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
 
-            tvExamName = itemView.findViewById(R.id.className);
-            tvExamDate = itemView.findViewById(R.id.examDate);
-            tvExamTime = itemView.findViewById(R.id.classTime);
-            tvExamLoc = itemView.findViewById(R.id.classProf);
+            tvClassName = itemView.findViewById(R.id.className);
+            tvClassTime = itemView.findViewById(R.id.classTime);
+            tvClassProf = itemView.findViewById(R.id.classProf);
 
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
