@@ -36,15 +36,24 @@
     <string name="classTime">Class time</string>
     <string name="classProf">Class Instructor</string>
     <string name="edit_class">Edit Class</string>
-    
+
     <!-- Assignment Strings -->
     <string name="add_assignment">Add Assignment</string>
     <string name="assignmentTitleHint">Enter Assignment Title</string>
     <string name="assignmentClassHint">Enter Class Title</string>
     <string name="assignmentDueDateHint">Enter Assignment Due Date</string>
+    <string name="assignmentProgressHint">Enter Assignment Progress</string>
     <string name="assignmentTitle">Assignment Title</string>
     <string name="assignmentDueDate">Assignment Due Date</string>
     <string name="assignmentClass">Class Title</string>
+    <string name="assignmentProgress">Assignment Progress</string>
     <string name="edit_assignment">Edit Assignment</string>
     
+    <!-- To Do List Strings -->
+    <string name="add_toDoList">Add To-Do List</string>
+    <string name="toDoListTitleHint">Enter To-Do List Title</string>
+    <string name="toDoListName">To-Do List Name</string>
+    <string name="edit_toDoList">Edit To-Do List</string>
+    <string name="toDoListNameHint">Enter To-Do List Name</string>
+
 </resources>

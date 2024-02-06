@@ -14,8 +14,7 @@ import android.widget.EditText;
 import java.util.ArrayList;
 
 public class examActivity extends AppCompatActivity implements RecyclerViewInterface {
-
-    ArrayList<examModel> examModels = new ArrayList<>();
+    
     Exam_RecyclerViewAdapter adapter;
     EditText examNameEt, examDateEt, examTimeEt, examLocEt;
     Button addExam, returnMain;
@@ -51,15 +50,15 @@ public class examActivity extends AppCompatActivity implements RecyclerViewInter
                 String examTime = examTimeEt.getText().toString();
                 String examLoc = examLocEt.getText().toString();
 
-                examModels.add(new examModel(examName, examDate, examTime, examLoc));
-                adapter.notifyItemInserted(examModels.size() - 1);
+                examModel.examModels.add(new examModel(examName, examDate, examTime, examLoc));
+                adapter.notifyItemInserted(examModel.examModels.size() - 1);
                 updateExamModels(recyclerView);
             }
         });
     }
 
     private void updateExamModels(RecyclerView recyclerView) {
-        adapter = new Exam_RecyclerViewAdapter(this, examModels, this);
+        adapter = new Exam_RecyclerViewAdapter(this, examModel.examModels, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -70,7 +69,7 @@ public class examActivity extends AppCompatActivity implements RecyclerViewInter
 
     @Override
     public void onItemLongClick(int position) {
-        examModels.remove(position);
+        examModel.examModels.remove(position);
         adapter.notifyItemRemoved(position);
     }
 
@@ -85,15 +84,15 @@ public class examActivity extends AppCompatActivity implements RecyclerViewInter
 
         Button updateExam = dialog.findViewById(R.id.updateExamBtn);
 
-        newExamName.setText((examModels.get(position)).getExamName());
-        newExamDate.setText((examModels.get(position)).getExamDate());
-        newExamTime.setText((examModels.get(position)).getExamTime());
-        newExamLoc.setText((examModels.get(position)).getExamLoc());
+        newExamName.setText((examModel.examModels.get(position)).getExamName());
+        newExamDate.setText((examModel.examModels.get(position)).getExamDate());
+        newExamTime.setText((examModel.examModels.get(position)).getExamTime());
+        newExamLoc.setText((examModel.examModels.get(position)).getExamLoc());
 
         updateExam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                examModels.set(position, new examModel(newExamName.getText().toString(),
+                examModel.examModels.set(position, new examModel(newExamName.getText().toString(),
                         newExamDate.getText().toString(),
                         newExamTime.getText().toString(),
                         newExamLoc.getText().toString()));

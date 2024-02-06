@@ -14,8 +14,7 @@ import android.widget.EditText;
 import java.util.ArrayList;
 
 public class classActivity extends AppCompatActivity implements RecyclerViewInterface{
-    
-    ArrayList<classModel> classModels = new ArrayList<>();
+
     Class_RecyclerViewAdapter adapter;
     EditText classNameEt, classTimeEt, classProfEt;
     Button addClass, returnMain;
@@ -49,15 +48,15 @@ public class classActivity extends AppCompatActivity implements RecyclerViewInte
                 String classTime = classTimeEt.getText().toString();
                 String classProf = classProfEt.getText().toString();
 
-                classModels.add(new classModel(className, classTime, classProf));
-                adapter.notifyItemInserted(classModels.size() - 1);
+                classModel.classModels.add(new classModel(className, classTime, classProf));
+                adapter.notifyItemInserted(classModel.classModels.size() - 1);
                 updateClassModels(recyclerView);
             }
         });
     }
 
     private void updateClassModels(RecyclerView recyclerView) {
-        adapter = new Class_RecyclerViewAdapter(this, classModels, this);
+        adapter = new Class_RecyclerViewAdapter(this, classModel.classModels, this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -67,7 +66,7 @@ public class classActivity extends AppCompatActivity implements RecyclerViewInte
     }
     @Override
     public void onItemLongClick(int position) {
-        classModels.remove(position);
+        classModel.classModels.remove(position);
         adapter.notifyItemRemoved(position);
     }
 
@@ -82,14 +81,14 @@ public class classActivity extends AppCompatActivity implements RecyclerViewInte
 
         Button updateClass = dialog.findViewById(R.id.updateClassBtn);
 
-        newClassName.setText((classModels.get(position)).getClassName());
-        newClassTime.setText((classModels.get(position)).getClassTime());
-        newClassProf.setText((classModels.get(position)).getClassProf());
+        newClassName.setText((classModel.classModels.get(position)).getClassName());
+        newClassTime.setText((classModel.classModels.get(position)).getClassTime());
+        newClassProf.setText((classModel.classModels.get(position)).getClassProf());
 
         updateClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                classModels.set(position, new classModel(newClassName.getText().toString(),
+                classModel.classModels.set(position, new classModel(newClassName.getText().toString(),
                         newClassTime.getText().toString(),
                         newClassProf.getText().toString()));
                 adapter.notifyItemChanged(position);

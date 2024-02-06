@@ -1,6 +1,9 @@
 package com.example.androidtest2app;
 
+import java.util.ArrayList;
+
 public class examModel {
+    public static ArrayList<examModel> examModels = new ArrayList<>();
     String examName;
     String examTime;
     String examLoc;

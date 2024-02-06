@@ -24,10 +24,10 @@
         android:text="@string/add_exam"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.946"
+        app:layout_constraintHorizontal_bias="0.945"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
-        app:layout_constraintVertical_bias="0.638" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.901" />
 
     <Button
         android:id="@+id/examsToHomeBtn"
@@ -38,8 +38,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.945"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
-        app:layout_constraintVertical_bias="0.312" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.801" />
 
     <EditText
         android:id="@+id/examLocEt"
@@ -48,11 +48,11 @@
         android:hint="@string/examLocHint"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/updateExamsBtn"
-        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
-        app:layout_constraintVertical_bias="0.907" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
 
     <EditText
         android:id="@+id/examDateEt"
@@ -61,11 +61,11 @@
         android:hint="@string/examDateHint"
         android:inputType="datetime|date"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/updateExamsBtn"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
-        app:layout_constraintVertical_bias="0.352" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.799" />
 
     <EditText
         android:id="@+id/examNameEt"
@@ -74,11 +74,11 @@
         android:hint="@string/examNameHint"
         android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/updateExamsBtn"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
-        app:layout_constraintVertical_bias="0.084" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.714" />
 
     <EditText
         android:id="@+id/examTimeEt"
@@ -87,10 +87,10 @@
         android:hint="@string/examTimeHint"
         android:inputType="datetime|time"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/updateExamsBtn"
-        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/examsRecyclerView"
-        app:layout_constraintVertical_bias="0.643" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.884" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

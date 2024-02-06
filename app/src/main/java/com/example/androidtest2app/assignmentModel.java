@@ -1,13 +1,21 @@
 package com.example.androidtest2app;
 
-public class assignmentModel {
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class assignmentModel{
     String assignmentTitle, assignmentDueDate, assignmentClass;
     int progress;
 
-    public assignmentModel(String assignmentTitle, String assignmentDueDate, String assignmentClass) {
+    public static ArrayList<assignmentModel> assignmentModels = new ArrayList<>();
+
+
+    public assignmentModel(String assignmentTitle, String assignmentDueDate, String assignmentClass, int progress) {
         this.assignmentTitle = assignmentTitle;
         this.assignmentDueDate = assignmentDueDate;
         this.assignmentClass = assignmentClass;
+        this.progress = progress;
     }
 
     public String getAssignmentTitle() {
@@ -25,4 +33,5 @@ public class assignmentModel {
     public int getProgress() {
         return progress;
     }
+
 }

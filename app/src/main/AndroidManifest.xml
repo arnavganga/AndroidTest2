@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AndroidTest2App"
         tools:targetApi="31">
         <activity
+            android:name=".toDoListActivity"
+            android:exported="false" />
+        <activity
             android:name=".assignmentActivity"
             android:exported="false" />
         <activity
@@ -21,7 +24,7 @@
         <activity
             android:name=".examActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustResize"></activity>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

@@ -12,58 +12,47 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Assignment_RecyclerViewAdapter extends RecyclerView.Adapter<Assignment_RecyclerViewAdapter.MyViewHolder> {
+public class ToDoList_RecyclerViewAdapter extends RecyclerView.Adapter<ToDoList_RecyclerViewAdapter.MyViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
     Context context;
-    ArrayList<assignmentModel> assignmentModels;
+    ArrayList<toDoListModel> toDoListModels;
 
-    public Assignment_RecyclerViewAdapter(Context context, ArrayList<assignmentModel> assignmentModels,
-                                     RecyclerViewInterface recyclerViewInterface) {
+    public ToDoList_RecyclerViewAdapter(Context context, ArrayList<toDoListModel> toDoListModels,
+                                          RecyclerViewInterface recyclerViewInterface) {
         this.context = context;
-        this.assignmentModels = assignmentModels;
+        this.toDoListModels = toDoListModels;
         this.recyclerViewInterface = recyclerViewInterface;
     }
     @NonNull
     @Override
-    public Assignment_RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ToDoList_RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         // Inflate layout
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.assignment_recycler_view_row, parent, false);
+        View view = inflater.inflate(R.layout.todolist_recycler_view_row, parent, false);
 
-        return new Assignment_RecyclerViewAdapter.MyViewHolder(view, recyclerViewInterface);
+        return new ToDoList_RecyclerViewAdapter.MyViewHolder(view, recyclerViewInterface);
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull Assignment_RecyclerViewAdapter.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ToDoList_RecyclerViewAdapter.MyViewHolder holder, int position) {
         //Assigning values to recycler view
-
-        holder.tvAssignmentTitle.setText(assignmentModels.get(position).getAssignmentTitle());
-        holder.tvAssignmentDueDate.setText(assignmentModels.get(position).getAssignmentDueDate());
-        holder.tvAssignmentClass.setText(assignmentModels.get(position).getAssignmentClass());
-        holder.assignmentsProgress.setProgress(assignmentModels.get(position).getProgress());
-
+        holder.tvToDoListName.setText(toDoListModels.get(position).getToDoListName());
     }
 
     @Override
     public int getItemCount() {
-        return assignmentModels.size();
+        return toDoListModels.size();
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         //Grab views from recycler_view_row
-
-        TextView tvAssignmentTitle, tvAssignmentDueDate, tvAssignmentClass;
-        ProgressBar assignmentsProgress;
+        TextView tvToDoListName;
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
 
-            tvAssignmentTitle = itemView.findViewById(R.id.assignmentTitle);
-            tvAssignmentDueDate = itemView.findViewById(R.id.assignmentDueDate);
-            tvAssignmentClass = itemView.findViewById(R.id.assignmentClass);
-            assignmentsProgress = itemView.findViewById(R.id.assignmentsProgress);
-
+            tvToDoListName = itemView.findViewById(R.id.toDoListName);
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {

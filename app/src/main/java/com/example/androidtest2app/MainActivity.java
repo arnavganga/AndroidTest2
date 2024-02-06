@@ -34,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
         Button examsBtn = findViewById(R.id.examsBtn);
         Button classesBtn = findViewById(R.id.classesBtn);
         Button assignmentsBtn = findViewById(R.id.assignmentsBtn);
+        Button toDoBtn = findViewById(R.id.toDoBtn);
+
+        toDoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openToDoListsActivity();
+            }
+        });
 
         assignmentsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +83,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void openToDoListsActivity(){
+        Intent intent = new Intent(this, toDoListActivity.class);
+        startActivity(intent);
+    }
     private void openExamsActivity(){
         Intent intent = new Intent(this, examActivity.class);
         startActivity(intent);
