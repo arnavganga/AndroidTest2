@@ -9,7 +9,6 @@ public class examModel {
     String examLoc;
     String examDate;
 
-
     public examModel(String examName, String examDate, String examTime, String examLoc) {
         this.examName = examName;
         this.examTime = examTime;
@@ -31,18 +30,5 @@ public class examModel {
 
     public String getExamDate() {
         return examDate;
-    }
-
-    public void setExamName(String examName) {
-        this.examName = examName;
-    }
-    public void setExamTime(String examTime) {
-        this.examTime = examTime;
-    }
-    public void setExamLoc(String examLoc) {
-        this.examLoc = examLoc;
-    }
-    public void setExamDate(String examDate) {
-        this.examDate = examDate;
     }
 }

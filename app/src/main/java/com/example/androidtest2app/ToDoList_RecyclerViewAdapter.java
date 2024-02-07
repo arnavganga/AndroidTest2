@@ -37,7 +37,8 @@ public class ToDoList_RecyclerViewAdapter extends RecyclerView.Adapter<ToDoList_
     @Override
     public void onBindViewHolder(@NonNull ToDoList_RecyclerViewAdapter.MyViewHolder holder, int position) {
         //Assigning values to recycler view
-        holder.tvToDoListName.setText(toDoListModels.get(position).getToDoListName());
+        holder.eventName.setText(toDoListModels.get(position).getEventName());
+        holder.eventDate.setText(toDoListModels.get(position).getEventDate());
     }
 
     @Override
@@ -47,12 +48,13 @@ public class ToDoList_RecyclerViewAdapter extends RecyclerView.Adapter<ToDoList_
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         //Grab views from recycler_view_row
-        TextView tvToDoListName;
+        TextView eventName, eventDate;
 
         public MyViewHolder(@NonNull View itemView, RecyclerViewInterface recyclerViewInterface) {
             super(itemView);
 
-            tvToDoListName = itemView.findViewById(R.id.toDoListName);
+            eventName = itemView.findViewById(R.id.eventName);
+            eventDate = itemView.findViewById(R.id.eventDate);
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {

@@ -12,12 +12,12 @@
 
 
     <TextView
-        android:id="@+id/editToDoListTitle"
+        android:id="@+id/editEventTitle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="21dp"
         android:gravity="center"
-        android:text="@string/edit_toDoList"
+        android:text="@string/edit_event"
         android:textColor="#fff"
         android:textSize="32sp"
         android:textStyle="bold">
@@ -25,17 +25,26 @@
     </TextView>
 
     <EditText
-        android:id="@+id/editToDoListName"
+        android:id="@+id/editEventName"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="#fff"
-        android:hint="@string/toDoListNameHint"
+        android:hint="@string/eventNameHint"
         android:inputType="text"
         android:padding="11dp">
     </EditText>
 
+    <EditText
+        android:id="@+id/editEventDate"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#fff"
+        android:hint="@string/eventDateHint"
+        android:inputType="datetime|date"
+        android:padding="11dp" />
+
     <Button
-        android:id="@+id/updateToDoListBtn"
+        android:id="@+id/updateEventBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"

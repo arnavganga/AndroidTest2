@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,20 +17,15 @@ import java.util.ArrayList;
 public class examActivity extends AppCompatActivity implements RecyclerViewInterface {
     
     Exam_RecyclerViewAdapter adapter;
-    EditText examNameEt, examDateEt, examTimeEt, examLocEt;
     Button addExam, returnMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.exam_activity);
-
-        examNameEt = findViewById(R.id.examNameEt);
-        examDateEt = findViewById(R.id.examDateEt);
-        examTimeEt = findViewById(R.id.examTimeEt);
-        examLocEt = findViewById(R.id.examLocEt);
         addExam = findViewById(R.id.updateExamsBtn);
         returnMain = findViewById(R.id.examsToHomeBtn);
+        Context context = this;
 
         RecyclerView recyclerView = findViewById(R.id.examsRecyclerView);
 
@@ -45,14 +41,26 @@ public class examActivity extends AppCompatActivity implements RecyclerViewInter
         addExam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String examName = examNameEt.getText().toString();
-                String examDate = examDateEt.getText().toString();
-                String examTime = examTimeEt.getText().toString();
-                String examLoc = examLocEt.getText().toString();
-
-                examModel.examModels.add(new examModel(examName, examDate, examTime, examLoc));
-                adapter.notifyItemInserted(examModel.examModels.size() - 1);
-                updateExamModels(recyclerView);
+                Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.exams_update);
+                EditText newExamName = dialog.findViewById(R.id.editExamName);
+                EditText newExamDate = dialog.findViewById(R.id.editExamDate);
+                EditText newExamTime = dialog.findViewById(R.id.editExamTime);
+                EditText newExamLoc = dialog.findViewById(R.id.editExamLoc);
+                Button updateExam = dialog.findViewById(R.id.updateExamBtn);
+                updateExam.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        examModel.examModels.add(new examModel(newExamName.getText().toString(),
+                                newExamDate.getText().toString(),
+                                newExamTime.getText().toString(),
+                                newExamLoc.getText().toString()));
+                        adapter.notifyItemInserted(examModel.examModels.size() - 1);
+                        recyclerView.scrollToPosition(examModel.examModels.size() - 1);
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
     }

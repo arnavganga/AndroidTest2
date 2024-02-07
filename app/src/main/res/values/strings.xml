@@ -51,9 +51,12 @@
     
     <!-- To Do List Strings -->
     <string name="add_toDoList">Add To-Do List</string>
+    <string name="add_event">Add Event</string>
     <string name="toDoListTitleHint">Enter To-Do List Title</string>
-    <string name="toDoListName">To-Do List Name</string>
-    <string name="edit_toDoList">Edit To-Do List</string>
-    <string name="toDoListNameHint">Enter To-Do List Name</string>
+    <string name="eventName">Event Name</string>
+    <string name="eventDate">Event Date</string>
+    <string name="edit_event">Edit Event</string>
+    <string name="eventNameHint">Enter Event Name</string>
+    <string name="eventDateHint">Enter Event Date</string>
 
 </resources>

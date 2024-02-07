@@ -19,23 +19,13 @@ public class classModel {
         return className;
     }
 
-    public void setClassName(String className) {
-        this.className = className;
-    }
-
     public String getClassTime() {
         return classTime;
     }
 
-    public void setClassTime(String classTime) {
-        this.classTime = classTime;
-    }
 
     public String getClassProf() {
         return classProf;
     }
 
-    public void setClassProf(String classProf) {
-        this.classProf = classProf;
-    }
 }

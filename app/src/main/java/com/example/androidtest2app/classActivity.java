@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,13 +24,9 @@ public class classActivity extends AppCompatActivity implements RecyclerViewInte
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.class_activity);
-
-        classNameEt = findViewById(R.id.classNameEt);
-        classTimeEt = findViewById(R.id.classTimeEt);
-        classProfEt = findViewById(R.id.classProfEt);
         addClass = findViewById(R.id.updateClassesBtn);
         returnMain = findViewById(R.id.classesToHomeBtn);
-        
+        Context context = this;
         RecyclerView recyclerView = findViewById(R.id.classesRecyclerView);
         
         updateClassModels(recyclerView);
@@ -44,13 +41,27 @@ public class classActivity extends AppCompatActivity implements RecyclerViewInte
         addClass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String className = classNameEt.getText().toString();
-                String classTime = classTimeEt.getText().toString();
-                String classProf = classProfEt.getText().toString();
 
-                classModel.classModels.add(new classModel(className, classTime, classProf));
-                adapter.notifyItemInserted(classModel.classModels.size() - 1);
-                updateClassModels(recyclerView);
+                Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.classes_update);
+                EditText newClassName = dialog.findViewById(R.id.editClassName);
+                EditText newClassTime = dialog.findViewById(R.id.editClassTime);
+                EditText newClassProf = dialog.findViewById(R.id.editClassProf);
+
+                Button updateClass = dialog.findViewById(R.id.updateClassBtn);
+
+                updateClass.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        classModel.classModels.add(new classModel(newClassName.getText().toString(),
+                                newClassTime.getText().toString(),
+                                newClassProf.getText().toString()));
+                        adapter.notifyItemInserted(classModel.classModels.size() - 1);
+                        adapter.notifyItemChanged(classModel.classModels.size() - 1);
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
     }

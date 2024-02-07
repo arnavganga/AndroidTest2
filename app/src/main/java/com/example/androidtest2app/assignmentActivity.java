@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -15,7 +16,6 @@ import java.util.ArrayList;
 
 public class assignmentActivity extends AppCompatActivity implements RecyclerViewInterface {
     Assignment_RecyclerViewAdapter adapter;
-    EditText assignmentTitleEt, assignmentDueDateEt, assignmentClassEt, assignmentProgressEt;
     Button addAssignment, returnMain, sortAssignmentsDateBtn, sortAssignmentsClassBtn;
 
     private RecyclerView recyclerView;
@@ -24,16 +24,11 @@ public class assignmentActivity extends AppCompatActivity implements RecyclerVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.assignment_activity);
-
-        assignmentTitleEt = findViewById(R.id.assignmentTitleEt);
-        assignmentDueDateEt = findViewById(R.id.assignmentDueDateEt);
-        assignmentClassEt = findViewById(R.id.assignmentClassEt);
-        assignmentProgressEt = findViewById(R.id.assignmentProgressEt);
         addAssignment = findViewById(R.id.updateAssignmentsBtn);
         returnMain = findViewById(R.id.assignmentsToHomeBtn);
         sortAssignmentsDateBtn = findViewById(R.id.sortAssignmentsDateBtn);
         sortAssignmentsClassBtn = findViewById(R.id.sortAssignmentsClassBtn);
-
+        Context context = this;
         recyclerView = findViewById(R.id.assignmentsRecyclerView);
 
         updateAssignmentModels();
@@ -48,18 +43,26 @@ public class assignmentActivity extends AppCompatActivity implements RecyclerVie
         addAssignment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String assignmentTitle = assignmentTitleEt.getText().toString();
-                String assignmentDueDate = assignmentDueDateEt.getText().toString();
-                String assignmentClass = assignmentClassEt.getText().toString();
-                String assignmentProgressStr = assignmentProgressEt.getText().toString();
-                int assignmentProgress = Integer.parseInt(assignmentProgressStr);
-
-                assignmentModel.assignmentModels.add(new assignmentModel(assignmentTitle,
-                        assignmentDueDate,
-                        assignmentClass,
-                        assignmentProgress));
-                adapter.notifyItemInserted(assignmentModel.assignmentModels.size() - 1);
-                recyclerView.scrollToPosition(assignmentModel.assignmentModels.size() - 1);
+                Dialog dialog = new Dialog(context);
+                dialog.setContentView(R.layout.assignments_update);
+                EditText newAssignmentTitle = dialog.findViewById(R.id.editAssignmentTitle);
+                EditText newAssignmentDueDate = dialog.findViewById(R.id.editAssignmentDueDate);
+                EditText newAssignmentClass = dialog.findViewById(R.id.editAssignmentClass);
+                EditText newAssignmentProgress = dialog.findViewById(R.id.editAssignmentProgress);
+                Button updateAssignment = dialog.findViewById(R.id.updateAssignmentBtn);
+                updateAssignment.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        assignmentModel.assignmentModels.add(new assignmentModel(newAssignmentTitle.getText().toString(),
+                                newAssignmentDueDate.getText().toString(),
+                                newAssignmentClass.getText().toString(),
+                                Integer.parseInt(newAssignmentProgress.getText().toString())));
+                        adapter.notifyItemInserted(assignmentModel.assignmentModels.size() - 1);
+                        recyclerView.scrollToPosition(assignmentModel.assignmentModels.size() - 1);
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
             }
         });
 

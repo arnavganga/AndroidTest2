@@ -4,29 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#C4CDE0"
     tools:context=".toDoListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/toDoListsRecyclerView"
-        android:layout_width="391dp"
-        android:layout_height="560dp"
+        android:layout_width="397dp"
+        android:layout_height="593dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4" />
+        app:layout_constraintVertical_bias="0.398" />
 
     <Button
-        android:id="@+id/addToDoListBtn"
+        android:id="@+id/addEventBtn"
         android:layout_width="391dp"
         android:layout_height="58dp"
-        android:text="@string/add_toDoList"
+        android:text="@string/add_event"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.959" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <Button
         android:id="@+id/toDoListToHomeBtn"
@@ -35,9 +35,9 @@
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.007" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
